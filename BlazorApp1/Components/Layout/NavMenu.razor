@@ -1,0 +1,45 @@
+﻿<nav class="navbar-expand">
+	<div class="container-fluid">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<li class="nav-item">
+				<NavLink class="nav-link" href="">Home</NavLink>
+			</li>
+			<li class="nav-item dropdown">
+				<NavLink class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Departments
+				</NavLink>
+				<ul class="dropdown-menu">
+					@foreach (string dpt in departmentNames) {
+						<li><NavLink class="dropdown-item" href="@String.Concat("departments/", @dpt)">Arts</NavLink></li>
+						//$ concat didnt seem to work. Maybe im just too new to blazor
+					}
+
+				</ul>
+			</li>
+			<li class="nav-item">
+				<NavLink class="nav-link" href="">Services</NavLink>
+			</li>
+			<li class="nav-item">
+				<NavLink class="nav-link" href="">Contact</NavLink>
+			</li>
+		</ul>
+		
+	</div>
+	
+	
+	
+</nav>
+
+@code{
+	string departmentsPath = "departments";
+
+	string[] departmentNames = 
+	{
+		"Arts",
+		"3Dmodels",
+		"Sound",
+		"Programming",
+		"Writing",
+		"VoiceActing"
+	};
+}
