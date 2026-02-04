@@ -4,9 +4,23 @@
 	<Top />
 
     <NavMenu />
-        <div>
-            @Body 
-        </div>
+
+    <Microsoft.AspNetCore.Components.Authorization.CascadingAuthenticationState>
+    <Microsoft.AspNetCore.Components.Authorization.AuthorizeView>
+
+        <Authorized>
+            <div>
+                @Body
+            </div>
+        </Authorized>
+        <NotAuthorized>
+            <div class="text-start me-3">
+                Welcome, Guest!
+            </div>
+		</NotAuthorized>
+    </Microsoft.AspNetCore.Components.Authorization.AuthorizeView>
+    </Microsoft.AspNetCore.Components.Authorization.CascadingAuthenticationState>
+
     <Bottom />
 
 </div>
